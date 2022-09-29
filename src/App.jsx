@@ -12,6 +12,7 @@ function App() {
     <AppComponent>
       <UserState>
         <GlobalStyles />
+        <QueryBox/>
       </UserState>
     </AppComponent>
   );
