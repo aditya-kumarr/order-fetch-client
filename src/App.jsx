@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles.style";
+import { CardView } from "./styles";
 function App() {
   // A serch bar for seraching for users
   // A serch bar for seraching for orders
@@ -8,7 +9,7 @@ function App() {
   return (
     <AppComponent>
       <GlobalStyles />
-      <div>Hi</div>
+      <CardView>Hi</CardView>
     </AppComponent>
   );
 }
