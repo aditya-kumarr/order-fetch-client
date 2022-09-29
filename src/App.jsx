@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import QueryBox from "./components/QueryBox";
+import UserState from "./contexts/UserContext";
 import GlobalStyles from "./GlobalStyles.style";
 import { CardView } from "./styles";
 function App() {
@@ -8,8 +10,9 @@ function App() {
   // when clicked on an a result show more information on a different page.
   return (
     <AppComponent>
-      <GlobalStyles />
-      <CardView>Hi</CardView>
+      <UserState>
+        <GlobalStyles />
+      </UserState>
     </AppComponent>
   );
 }
@@ -17,6 +20,6 @@ const AppComponent = styled.div`
   width: 100vw;
   min-height: 120vh;
   background-color: #181931;
-  padding: 3em;
+  padding: 3em 0;
 `;
 export default App;
