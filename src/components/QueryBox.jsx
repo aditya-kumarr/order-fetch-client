@@ -19,6 +19,7 @@ const QueryBox = () => {
     });
     const res = await jsonRes.json();
     console.log(res);
+    setQuery("");
     setUsers(res);
   };
 
@@ -36,7 +37,7 @@ const InputForm = styled.form`
   align-items: center;
   gap: 0.5em;
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
 `;
 
 const SeachBox = styled.input`
