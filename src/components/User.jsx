@@ -9,7 +9,6 @@ const User = ({ user }) => {
       <ListItem
         onClick={() => {
           setShow((prev) => !prev);
-          console.log("clicked");
         }}
       >
         <div>

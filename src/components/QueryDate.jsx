@@ -5,13 +5,9 @@ import { InputForm, SubmitButton, SearchBox } from "../styles";
 const QueryDate = () => {
   const [query, setQuery] = useState("");
   const { setOrders } = useContext(OrderContext);
-  useEffect(() => {
-    console.log(query);
-  }, [query]);
 
   const QueryHandler = async (e) => {
     e.preventDefault();
-    console.log({ date: query });
     const jsonRes = await fetch("http://localhost:3000/api/orders", {
       method: "POST",
       headers: {
@@ -21,13 +17,11 @@ const QueryDate = () => {
       body: JSON.stringify({ date: query }),
     });
     const res = await jsonRes.json();
-    console.log(res);
     setOrders(res);
   };
 
   return (
     <InputForm onSubmit={QueryHandler}>
-      {/* <SeachBox value={query} onChange={(e) => setQuery(e.target.value)} /> */}
       <SearchDateBox
         value={query}
         onChange={(e) => setQuery(e.target.value.toString())}

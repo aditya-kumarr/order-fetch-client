@@ -9,7 +9,6 @@ const QueryName = () => {
 
   const QueryHandler = async (e) => {
     e.preventDefault();
-    console.log({ name: query });
     const jsonRes = await fetch("http://localhost:3000/api/users", {
       method: "POST",
       headers: {
@@ -19,7 +18,6 @@ const QueryName = () => {
       body: JSON.stringify({ name: query }),
     });
     const res = await jsonRes.json();
-    console.log(res);
     setQuery("");
     setUsers(res);
   };
