@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 export const CardView = styled.div`
   display: inline-block;
   background-color: #0004;
@@ -74,6 +74,26 @@ export const PageContainer = styled.div`
   width: 90%;
   max-width: 1120px;
 `;
+
+export const Page = styled(motion.main)`
+  width: 100vw;
+  height: 100vh;
+`;
+
+Page.defaultProps = {
+  initial: {
+    width: "0%",
+  },
+  animate: {
+    width: "100%",
+  },
+  exit: {
+    x: window.innerWidth,
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
 export const ListItem = styled(CardView)`
   display: flex;
   width: 100%;
