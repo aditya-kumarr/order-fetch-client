@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import QueryName from "./components/QueryName";
-import ResultContainer from "./components/ResultContainer";
+import ResultContainer from "./components/UserResultContainer";
 import OrderState from "./contexts/OrderContext";
 import UserState from "./contexts/UserContext";
 import GlobalStyles from "./GlobalStyles.style";
+import Router from "./Router";
 function App() {
   // A serch bar for seraching for users
   // A serch bar for seraching for orders
@@ -14,8 +15,8 @@ function App() {
       <UserState>
         <OrderState>
           <GlobalStyles />
-          <QueryName />
-          <ResultContainer />
+
+          <Router />
         </OrderState>
       </UserState>
     </AppComponent>
@@ -25,7 +26,7 @@ const AppComponent = styled.div`
   max-width: 100vw;
   min-height: 120vh;
   background-color: #181931;
-  padding: 3em;
+  padding: 3em 0;
   overflow-y: hidden;
 `;
 export default App;
