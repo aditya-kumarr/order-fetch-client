@@ -67,3 +67,47 @@ export const SearchBox = styled.input`
   width: 100%;
   color: white;
 `;
+export const PageContainer = styled.div`
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1120px;
+`;
+export const ListItem = styled(CardView)`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.5em;
+  cursor: pointer;
+  & > * {
+    width: 100%;
+  }
+  & > *:nth-child(2),
+  & > *:nth-child(3) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+export const ListHeading = styled(CardView)`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.5em 1.5em;
+  & > * {
+    width: 100%;
+  }
+  & > *:nth-child(2),
+  & > *:nth-child(3) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+export const ListContainer = styled(CardView)`
+margin-top: 2em;
+display: flex;
+flex-direction: column;
+padding: 1em;
+min-width: 100%;
+height: 100%;
+gap: 0.5em;
+`;
