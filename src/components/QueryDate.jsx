@@ -1,0 +1,52 @@
+import React, { useContext, useEffect, useState } from "react";
+import styled from "styled-components";
+import { OrderContext } from "../contexts/OrderContext";
+import { InputForm, SubmitButton, SearchBox } from "../styles";
+const QueryDate = () => {
+  const [query, setQuery] = useState("");
+  const { setOrders } = useContext(OrderContext);
+  useEffect(() => {
+    console.log(query);
+  }, [query]);
+
+  const QueryHandler = async (e) => {
+    e.preventDefault();
+    console.log({ date: query });
+    const jsonRes = await fetch("http://localhost:3000/api/orders", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ date: query }),
+    });
+    const res = await jsonRes.json();
+    console.log(res);
+    setOrders(res);
+  };
+
+  return (
+    <InputForm onSubmit={QueryHandler}>
+      {/* <SeachBox value={query} onChange={(e) => setQuery(e.target.value)} /> */}
+      <SearchDateBox
+        value={query}
+        onChange={(e) => setQuery(e.target.value.toString())}
+      />
+      <SubmitButton>Find</SubmitButton>
+    </InputForm>
+  );
+};
+
+const SearchDateBox = styled(SearchBox).attrs({ type: "date" })`
+  position: relative;
+  &::-webkit-calendar-picker-indicator {
+    position: absolute;
+    font-size: 3rem;
+    background-color: transparent;
+    right: 10px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+`;
+
+export default QueryDate;

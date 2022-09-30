@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import QueryName from "./components/QueryName";
 import ResultContainer from "./components/ResultContainer";
+import OrderState from "./contexts/OrderContext";
 import UserState from "./contexts/UserContext";
 import GlobalStyles from "./GlobalStyles.style";
 function App() {
@@ -11,9 +12,11 @@ function App() {
   return (
     <AppComponent>
       <UserState>
-        <GlobalStyles />
-        <QueryName />
-        <ResultContainer />
+        <OrderState>
+          <GlobalStyles />
+          <QueryName />
+          <ResultContainer />
+        </OrderState>
       </UserState>
     </AppComponent>
   );
