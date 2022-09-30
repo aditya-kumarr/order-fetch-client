@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { UserContext } from "../contexts/UserContext";
+import { InputForm, SearchBox, SubmitButton } from "../styles";
 
 const QueryName = () => {
   const [query, setQuery] = useState("");
@@ -25,54 +26,14 @@ const QueryName = () => {
 
   return (
     <InputForm onSubmit={QueryHandler}>
-      <SeachBox placeholder="Enter first name.." value={query} onChange={(e) => setQuery(e.target.value)} />
+      <SearchBox
+        placeholder="Enter first name.."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
       <SubmitButton>Find</SubmitButton>
     </InputForm>
   );
 };
-const InputForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5em;
-  margin: 0 auto;
-  width: 90%;
-`;
-
-const SeachBox = styled.input`
-  font-size: 1.2rem;
-  padding: 1em;
-  border-radius: 10em;
-  background-color: #0004;
-  width: 100%;
-  color: white;
-`;
-
-const SubmitButton = styled.button`
-  flex-grow: none;
-  border-radius: 10em;
-
-  border: 1px solid transparent;
-  padding: 0.6em 3em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  color: white;
-  max-width: max-content;
-  border-color: #646cff;
-  &:hover {
-    /* background: red; */
-    background-color: #646cff;
-    border-color: transparent;
-  }
-  &:focus,
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-`;
 
 export default QueryName;
