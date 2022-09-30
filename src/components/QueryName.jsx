@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { UserContext } from "../contexts/UserContext";
 
-const QueryBox = () => {
+const QueryName = () => {
   const [query, setQuery] = useState("");
   const { setUsers } = useContext(UserContext);
 
@@ -75,4 +75,4 @@ const SubmitButton = styled.button`
   }
 `;
 
-export default QueryBox;
+export default QueryName;

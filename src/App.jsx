@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import QueryBox from "./components/QueryBox";
+import QueryName from "./components/QueryName";
 import UserState from "./contexts/UserContext";
 import GlobalStyles from "./GlobalStyles.style";
 import { CardView } from "./styles";
@@ -12,7 +12,7 @@ function App() {
     <AppComponent>
       <UserState>
         <GlobalStyles />
-        <QueryBox/>
+        <QueryName />
       </UserState>
     </AppComponent>
   );
@@ -21,6 +21,6 @@ const AppComponent = styled.div`
   width: 100vw;
   min-height: 120vh;
   background-color: #181931;
-  padding: 3em 0;
+  padding: 3em;
 `;
 export default App;
