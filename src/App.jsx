@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import QueryName from "./components/QueryName";
+import ResultContainer from "./components/ResultContainer";
 import UserState from "./contexts/UserContext";
 import GlobalStyles from "./GlobalStyles.style";
-import { CardView } from "./styles";
 function App() {
   // A serch bar for seraching for users
   // A serch bar for seraching for orders
@@ -13,14 +13,16 @@ function App() {
       <UserState>
         <GlobalStyles />
         <QueryName />
+        <ResultContainer />
       </UserState>
     </AppComponent>
   );
 }
 const AppComponent = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   min-height: 120vh;
   background-color: #181931;
   padding: 3em;
+  overflow-y: hidden;
 `;
 export default App;
