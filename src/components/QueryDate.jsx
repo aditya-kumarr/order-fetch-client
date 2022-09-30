@@ -1,7 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { OrderContext } from "../contexts/OrderContext";
-import { InputForm, SubmitButton, SearchBox } from "../styles";
+import {
+  InputForm,
+  SubmitButton,
+  SearchBox,
+  NavigationButton,
+} from "../styles";
 const QueryDate = () => {
   const [query, setQuery] = useState("");
   const { setOrders } = useContext(OrderContext);
@@ -21,13 +26,16 @@ const QueryDate = () => {
   };
 
   return (
-    <InputForm onSubmit={QueryHandler}>
-      <SearchDateBox
-        value={query}
-        onChange={(e) => setQuery(e.target.value.toString())}
-      />
-      <SubmitButton>Find</SubmitButton>
-    </InputForm>
+    <>
+      <NavigationButton to={"/"}>Back</NavigationButton>
+      <InputForm onSubmit={QueryHandler}>
+        <SearchDateBox
+          value={query}
+          onChange={(e) => setQuery(e.target.value.toString())}
+        />
+        <SubmitButton>Find</SubmitButton>
+      </InputForm>
+    </>
   );
 };
 

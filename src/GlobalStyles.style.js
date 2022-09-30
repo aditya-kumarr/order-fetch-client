@@ -12,6 +12,10 @@ h1,h2,h3,h4,h5,h6,div,p{
     font-size: 1rem;
     font-weight: 500;
 }
+a{
+    color:white;
+    text-decoration: none;
+}
 
 button{
     border: none;

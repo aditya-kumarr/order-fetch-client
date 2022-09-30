@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
-import styled from "styled-components";
 import { UserContext } from "../contexts/UserContext";
-import { InputForm, SearchBox, SubmitButton } from "../styles";
+import { InputForm, NavigationButton, SearchBox, SubmitButton } from "../styles";
 
 const QueryName = () => {
   const [query, setQuery] = useState("");
@@ -23,15 +22,20 @@ const QueryName = () => {
   };
 
   return (
-    <InputForm onSubmit={QueryHandler}>
-      <SearchBox
-        placeholder="Enter first name.."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <SubmitButton>Find</SubmitButton>
-    </InputForm>
+    <>
+      <NavigationButton to={"/orders"}>Serach By Date</NavigationButton>
+      <InputForm onSubmit={QueryHandler}>
+        <SearchBox
+          placeholder="Enter first name.."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <SubmitButton>Find</SubmitButton>
+      </InputForm>
+    </>
   );
 };
+
+
 
 export default QueryName;

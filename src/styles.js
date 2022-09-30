@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CardView = styled.div`
@@ -103,11 +104,26 @@ export const ListHeading = styled(CardView)`
   }
 `;
 export const ListContainer = styled(CardView)`
-margin-top: 2em;
-display: flex;
-flex-direction: column;
-padding: 1em;
-min-width: 100%;
-height: 100%;
-gap: 0.5em;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  min-width: 100%;
+  height: 100%;
+  gap: 0.5em;
+`;
+
+export const NavigationButton = styled(Link)`
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  border: 1px solid #f07900;
+  border-radius: 4rem;
+  background-color: #1a1a1a;
+  transition: all 500ms ease;
+  &:hover {
+    background-color: #f07900;
+    color: white;
+  }
 `;
