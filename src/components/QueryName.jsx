@@ -25,7 +25,7 @@ const QueryName = () => {
 
   return (
     <InputForm onSubmit={QueryHandler}>
-      <SeachBox value={query} onChange={(e) => setQuery(e.target.value)} />
+      <SeachBox placeholder="Enter first name.." value={query} onChange={(e) => setQuery(e.target.value)} />
       <SubmitButton>Find</SubmitButton>
     </InputForm>
   );
