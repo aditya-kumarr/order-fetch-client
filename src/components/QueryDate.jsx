@@ -13,14 +13,17 @@ const QueryDate = () => {
 
   const QueryHandler = async (e) => {
     e.preventDefault();
-    const jsonRes = await fetch("http://localhost:3000/api/orders", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ date: query }),
-    });
+    const jsonRes = await fetch(
+      "https://orders-fetch-server.onrender.com/api/orders",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ date: query }),
+      }
+    );
     const res = await jsonRes.json();
     setOrders(res);
   };

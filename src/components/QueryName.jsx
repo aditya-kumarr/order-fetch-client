@@ -8,7 +8,7 @@ const QueryName = () => {
 
   const QueryHandler = async (e) => {
     e.preventDefault();
-    const jsonRes = await fetch("http://localhost:3000/api/users", {
+    const jsonRes = await fetch("https://orders-fetch-server.onrender.com/api/users", {
       method: "POST",
       headers: {
         Accept: "application/json",
