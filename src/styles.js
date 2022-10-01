@@ -55,10 +55,6 @@ export const SubmitButton = styled.button`
     background-color: #646cff;
     border-color: transparent;
   }
-  &:focus,
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
 `;
 export const SearchBox = styled.input`
   font-size: 1.2rem;
@@ -135,6 +131,7 @@ export const ListContainer = styled(CardView)`
 
 export const NavigationButton = styled(Link)`
   position: fixed;
+  z-index: 100;
   right: 10px;
   bottom: 10px;
   padding: 10px;
