@@ -14,7 +14,7 @@ const QueryName = () => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name: query }),
+      body: JSON.stringify({ name: query.toLowerCase() }),
     });
     const res = await jsonRes.json();
     setQuery("");
