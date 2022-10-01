@@ -21,7 +21,7 @@ const QueryDate = () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ date: query }),
+        body: JSON.stringify({ date: query.toLowerCase() }),
       }
     );
     const res = await jsonRes.json();
