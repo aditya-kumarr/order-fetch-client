@@ -229,9 +229,17 @@ button{
     background-color: transparent;
     box-shadow: none;
     text-shadow: none;
+    
+}
+*{
+    -webkit-tap-highlight-color: transparent;
+    &:focus{
+        outline:none;
+        border:1px solid yellow;
+    }
 }
 
-`,iE=()=>N(Ot,{children:N(ef,{children:ke(Hg,{children:[N(eE,{}),N(nE,{})]})})}),sE=()=>{const[e,t]=k.exports.useState(""),{setOrders:n}=k.exports.useContext(tf);return ke(Ot,{children:[N(Gg,{to:"/",children:"Back"}),ke(Fg,{onSubmit:async o=>{o.preventDefault();const s=await(await fetch("https://orders-fetch-server.onrender.com/api/orders",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify({date:e})})).json();n(s)},children:[N(lE,{value:e,onChange:o=>t(o.target.value.toString())}),N(Ug,{children:"Find"})]})]})},lE=Ze(Bg).attrs({type:"date"})`
+`,iE=()=>N(Ot,{children:N(ef,{children:ke(Hg,{children:[N(eE,{}),N(nE,{})]})})}),sE=()=>{const[e,t]=k.exports.useState(""),{setOrders:n}=k.exports.useContext(tf);return ke(Ot,{children:[N(Gg,{to:"/",children:"Serach by firstName"}),ke(Fg,{onSubmit:async o=>{o.preventDefault();const s=await(await fetch("https://orders-fetch-server.onrender.com/api/orders",{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json"},body:JSON.stringify({date:e})})).json();n(s)},children:[N(lE,{value:e,onChange:o=>t(o.target.value.toString())}),N(Ug,{children:"Find"})]})]})},lE=Ze(Bg).attrs({type:"date"})`
   position: relative;
   &::-webkit-calendar-picker-indicator {
     position: absolute;
