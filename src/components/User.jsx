@@ -4,6 +4,9 @@ import OrderResultContainer from "./OrderResultContainer";
 
 const User = ({ user }) => {
   const [show, setShow] = useState(false);
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
   return (
     <>
       <ListItem
@@ -12,7 +15,7 @@ const User = ({ user }) => {
         }}
       >
         <div>
-          {user.firstName} {user.lastName}
+          {capitalize(user.firstName)} {capitalize(user.lastName)}
         </div>
         <div>{user.customerId}</div>
         <div>{user.orders.length}</div>
