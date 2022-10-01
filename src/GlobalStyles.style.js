@@ -22,6 +22,14 @@ button{
     background-color: transparent;
     box-shadow: none;
     text-shadow: none;
+    
+}
+*{
+    -webkit-tap-highlight-color: transparent;
+    &:focus{
+        outline:none;
+        border:1px solid yellow;
+    }
 }
 
 `;
