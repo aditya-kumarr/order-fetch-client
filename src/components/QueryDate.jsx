@@ -30,7 +30,7 @@ const QueryDate = () => {
 
   return (
     <>
-      <NavigationButton to={"/"}>Back</NavigationButton>
+      <NavigationButton to={"/"}>Serach by firstName</NavigationButton>
       <InputForm onSubmit={QueryHandler}>
         <SearchDateBox
           value={query}
